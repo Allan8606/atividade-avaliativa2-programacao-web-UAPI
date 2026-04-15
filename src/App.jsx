@@ -1,119 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import Header from './Header';
+import ProjetoCard from './ProjetoCard';
+
+const meusProjetos = [
+  {
+    titulo: "Ponto Eletrônico",
+    descricao: "API REST desenvolvida em Java com Spring Boot para gerenciamento de ponto eletrônico.",
+    link: "https://github.com/Allan8606/ponto-eletronico-springSecurity"
+  },
+  {
+    titulo: "GameReview",
+    descricao: "API REST desenvolvida em Java com Spring Boot para cadastro e avaliação de games.",
+    link: "https://github.com/Allan8606/projeto-GameReview"
+  },
+  {
+    titulo: "API de Cadastro de Clientes",
+    descricao: "API RESTful focada no aprendizado de Autenticação e Autorização com Spring Security.",
+    link: "https://github.com/Allan8606/cadastro-clientes-springSecurity"
+  },
+  {
+    titulo: "MagicFridgeAI",
+    descricao: "Projeto que utiliza a API Gemini para sugerir receitas baseadas nos itens do banco de dados.",
+    link: "https://github.com/Allan8606/MagicFridgeAI-Java10x"
+  }
+];
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      <Header />
 
-      <div className="ticks"></div>
+      <main>
+        <section id="sobre">
+          <h2>Sobre Mim</h2>
+          <div className="sobre-conteudo">
+            <img src="/img/foto pessoal.png" alt="Foto pessoal" />
+            <div className="sobre-texto">
+              <p>Olá, eu sou o Allan Isaac, um desenvolvedor back-end que vem se aventurando no front-end. Atualmente estou cursando Sistemas para Internet na Universidade Aberta do Piauí (UAPI).</p>
+              <p>Tenho experiência com Java e Spring Boot, trabalhando principalmente com APIs e lógica de negócio. Agora estou me desafiando a aprender front-end, buscando entender melhor a construção de interfaces e a experiência do usuário.</p>
+              <p>Gosto de aprender na prática, resolver problemas e evoluir constantemente. Meu objetivo é me tornar um desenvolvedor full-stack, capaz de construir soluções completas e eficientes.</p>
+            </div>
+          </div>
+        </section>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        <section id="projetos">
+          <h2>Projetos</h2>
+          <div className="projetos-detalhes">
+            {meusProjetos.map((projeto, index) => (
+              <ProjetoCard
+                key={index}
+                titulo={projeto.titulo}
+                descricao={projeto.descricao}
+                link={projeto.link}
+              />
+            ))}
+          </div>
+        </section>
+      </main>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+      <footer>
+        <p>Desenvolvido por Allan Isaac</p>
+      </footer>
     </>
   )
 }

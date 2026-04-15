@@ -1,16 +1,53 @@
-# React + Vite
+# Portfólio Pessoal - Migração para React 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é um portfólio pessoal moderno desenvolvido como parte da **Atividade Avaliativa 2 da disciplina de Programação Web na UAPI**. O objetivo principal foi realizar a migração de um site estático (HTML/CSS) para o ecossistema **React**, aplicando conceitos fundamentais da biblioteca.
 
-Currently, two official plugins are available:
+## 🛠️ Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** - Biblioteca principal
+- **Vite** - Build tool ultra-rápida
+- **JavaScript (ES6+)** - Lógica de programação
+- **CSS3** - Estilização personalizada (sem frameworks externos para manter a fidelidade ao design original)
+- **Google Fonts** - Tipografia personalizada (Nunito Sans)
 
-## React Compiler
+## 📋 Requisitos Implementados
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Conforme solicitado no desafio, o projeto conta com:
 
-## Expanding the ESLint configuration
+1.  **Componentização:** O portfólio foi dividido em componentes reutilizáveis, incluindo:
+    -   `Header`: Gerencia o menu de navegação.
+    -   `ProjetoCard`: Molde inteligente para exibir as informações de cada projeto.
+2.  **Renderização Dinâmica de Dados:** Implementação de um array de objetos contendo as informações dos projetos, que são mapeados e renderizados automaticamente na interface.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📁 Estrutura do Projeto
+
+```text
+/
+├── public/          # Assets estáticos (imagens e ícones)
+├── src/
+│   ├── Header.jsx    # Gerenciamento de navegação
+│   ├── ProjetoCard.jsx # Molde de projeto
+│   ├── App.jsx     # Orquestrador do portfólio
+│   ├── index.css    # Estilos globais originais
+│   └── main.jsx     # Ponto de entrada do React
+├── index.html       # Casca da aplicação (Vite)
+└── package.json     # Gerenciamento de dependências
+```
+
+## 🚀 Como Executar o Projeto
+
+Para rodar este projeto localmente, siga os passos:
+
+1.  Clone o repositório.
+2.  Instale as dependências:
+    ```bash
+    npm install
+    ```
+3.  Inicie o servidor de desenvolvimento:
+    ```bash
+    npm run dev
+    ```
+4.  Acesse o link gerado no terminal (geralmente `http://localhost:5173`).
+
+---
+Desenvolvido por **Allan Isaac** 👋
